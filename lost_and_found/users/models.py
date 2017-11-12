@@ -14,3 +14,6 @@ class User(AbstractUser):
 
     class Meta(AbstractUser.Meta):
         pass
+		
+class IMG(models.Model):
+	img = models.ImageField(upload_to = 'upload')

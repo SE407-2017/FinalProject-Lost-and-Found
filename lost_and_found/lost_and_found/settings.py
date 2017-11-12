@@ -124,7 +124,16 @@ LOGIN_REDIRECT_URL = '/'
 # https://docs.djangoproject.com/en/1.11/howto/static-files/
 
 STATIC_URL = '/static/'
+STATIC_ROOT= os.path.join(BASE_DIR, 'collect_static')
 
+STATICFILES_FINDERS = (
+    "django.contrib.staticfiles.finders.FileSystemFinder",
+    "django.contrib.staticfiles.finders.AppDirectoriesFinder"
+)
+
+
+MEDIA_ROOT = os.path.join(BASE_DIR, 'media').replace('\\', '/') 
+MEDIA_URL = '/media/'
 #to collect all the static files
 #STATIC_ROOT = os.path.join(BASE_DIR, 'collected_static')
  

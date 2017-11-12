@@ -2,7 +2,7 @@
 from __future__ import unicode_literals
 
 from django.shortcuts import render
-
+from models import *
 # Create your views here.
 from django.shortcuts import render, redirect
 from .forms import RegisterForm
@@ -44,3 +44,18 @@ def index(request):
 	
 def shiyan(request):
 	return render(request, 'shiyan.html')
+	
+def uploadImg(request):
+    if request.method == 'POST':
+        new_img = IMG(
+            img=request.FILES.get('img')
+        )
+        new_img.save()
+    return render(request, 'users/uploadimg.html')
+	
+def showImg(request):
+	imgs = IMG.objects.all()
+	content={
+		'imgs':imgs
+	}
+	return render(request,'users/showimg.html',content)
