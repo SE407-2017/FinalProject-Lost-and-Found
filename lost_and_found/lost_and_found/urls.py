@@ -20,8 +20,8 @@ from users import views
 
 urlpatterns = [
     url(r'^admin/', admin.site.urls),
-    url(r'^users/', include('users.urls')),
+    url(r'^users/', include('users.urls',namespace='users')),
     url(r'^users/', include('django.contrib.auth.urls')),
     url(r'^$', views.index, name='index'),
-	url(r'^users/shiyan/',views.shiyan),
+	url(r'^users/home/',views.home),
 ]

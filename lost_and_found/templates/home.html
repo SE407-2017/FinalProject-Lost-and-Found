@@ -4,51 +4,26 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1,maximum-scale=1.0,user-scalable=no" >
-    <script src="{% static 'js/jquery-1.11.1.min.js' %}"></script>
+    <script src="{% static 'js/jquery-1.11.1.min1.js' %}"></script>
     <script src="{% static 'js/index.js' %}" ></script>
-    <link rel="stylesheet" href="{% static 'css/style.css' %}">
-    <title>个人信息主页</title>
+    <link rel="stylesheet" href="{% static 'css/style1.css' %}">
+    <title>失物招领管理</title>
 </head>
-<body bgcolor="red">
+<body>
     <div class="bg-contain">
         <div class="nav">
             <ul>
-                <li>{{ user.username }}</li>
-                <li class="nav-active">part5</li>
-                <li>part6</li>
-                <li>part7</li>
-                <li>part8</li>
+            	<img src="{% static 'timg.jpg' %}">
+                <li>失物招领管理系统</li>
+                <h1>hello,{{ user.username }}</h1>
             </ul>
         </div>
 
         <div class="left-bar">
             <div class="left-inner">
-                <div class="b-choose choose-first"><span>part1</span></div>
-                <div class="b-choose choose-second"><span>part2</span></div>
-                <div class="b-choose choose-third"><span>part3</span></div>
-                <div class="b-choose choose-fourth"><span>part4</span>
-                    <div class="left-inner-bar">
-                        <ul >
-                            <li class="fourth-first">图一</li>
-                            <li class="fourth-second">图二</li>
-                            <li class="fourth-third">图三</li>
-                            <li class="fourth-fourth">图四</li>
-                            <li class="fourth-fifth">图五</li>
-                            <li class="fourth-sixth">图六</li>
-                            <li class="fourth-seventh">图七</li>
-                            <li class="fourth-eighth">图八</li>
-                            <li class="fourth-ninth">图九</li>
-                            <li class="fourth-tenth">图十</li>
-                            <li class="fourth-eleventh">图十一</li>
-                            <li class="fourth-twelfth">图十二</li>
-                        </ul>
-                    </div>
-                </div>
-				<div class="b-choose choose-fifth">
-				<a href="www.baidu.com">
-					<span>注销登陆</span>
-				</a>
-				</div>
+                <div class="b-choose choose-first"><span><a href="{% url 'users:info' %}">张贴物品信息</a></span></div>
+                <div class="b-choose choose-second"><span>关于我们</span></div>
+                <div class="b-choose choose-third"><span>意见箱</span></div>
             </div>
         </div>
         <div class="right-body">

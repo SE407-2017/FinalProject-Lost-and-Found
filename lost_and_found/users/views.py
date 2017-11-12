@@ -41,6 +41,7 @@ def register(request):
 
 def index(request):
     return render(request, 'index.html')
-	
-def shiyan(request):
-	return render(request, 'shiyan.html')
+def info(request):
+	return render(request, 'info.html')
+def home(request):
+	return render(request, 'home.html')
