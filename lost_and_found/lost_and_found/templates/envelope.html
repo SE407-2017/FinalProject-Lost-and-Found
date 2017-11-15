@@ -1,0 +1,79 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Invelope</title>
+    <script src="jquery-1.11.1.min.js"></script>
+    <style>
+        body{
+            background-color: #e0e0e0;
+        }
+        .whole{
+            position: relative;
+            width: 300px;
+            height: 500px;
+            margin: 100px auto;
+        }
+        .bac2{
+            z-index: -1;
+        }
+        .bac1{
+            z-index: 1;
+        }
+        .bac{
+            position: absolute;
+            width: 300px;
+            height: 220px;
+            bottom: 0;
+        }
+        .bac img{
+            width: 300px;
+            height: 100%;
+        }
+        .context{
+            width: 221px;
+            height: 400px;
+            border-radius: 4px;
+            position: absolute;
+            bottom: 0;
+            left: 29px;
+            background-color: white;
+            padding: 10px 10px;
+            transition: all 1s;
+            -moz-transition: all 1s;	/* Firefox 4 */
+            -webkit-transition: all 1s;	/* Safari 和 Chrome */
+            -o-transition: all 1s;	/* Opera */
+        }
+    </style>
+</head>
+<body>
+<div class="whole">
+    <div class="bac bac2">
+        <img src="bac2.png" alt="">
+    </div>
+    <div class="bac bac1">
+        <img src="bac.png" alt="">
+    </div>
+    <div class="context">
+        <p>I am a student coming from China.I am a student coming from China.I am a student coming from China.I am a student coming from China.I am a student coming from China.I am a student coming from China.
+        </p>
+    </div>
+</div>
+<script>
+    $(function () {
+        function move() {
+            var click = 1;
+            $('.context').click(function () {
+                if(click%2==1) {
+                    $(this).css('bottom', 100 + 'px')
+                }else {
+                    $(this).css('bottom', 0)
+                }
+                click++;
+            })
+        }
+        move()
+    })
+</script>
+</body>
+</html>
