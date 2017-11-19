@@ -1,0 +1,95 @@
+{% load static %}
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Invelope</title>
+    <script src="{% static 'js/jquery-1.11.1.min1.js' %}"></script>
+    <style type="text/css">
+        body{
+            background-color: #e9c9c9;
+        }
+        .whole{
+            position: relative;
+            width: 300px;
+            height: 500px;
+            margin: 100px auto;
+        }
+        .bac2{
+            z-index: -1;
+        }
+        .bac1{
+            z-index: 1;
+        }
+        .bac{
+            position: absolute;
+            width: 300px;
+            height: 220px;
+            bottom: 0;
+        }
+        .bac img{
+            width: 300px;
+            height: 100%;
+        }
+        .context{
+            width: 221px;
+            height: 400px;
+            border-radius: 4px;
+            position: absolute;
+            bottom: 0;
+            left: 29px;
+            background-color: white;
+            padding: 10px 10px;
+            transition: all 1s;
+            -moz-transition: all 1s;	/* Firefox 4 */
+            -webkit-transition: all 1s;	/* Safari 和 Chrome */
+            -o-transition: all 1s;	/* Opera */
+        }
+        .areatext{
+            width:217px;
+            max-width:250px;
+            height: 300px;
+            max-height: 350px;
+
+            ovreflow-y:auto;/*让滚动条自适应，保证兼容性*/
+        }
+        .note{
+            line-height:20px;padding:3px 5px;
+        }
+    </style>
+</head>
+<body>
+<div class="whole">
+    <div class="bac bac2">
+        <img src="{% static 'bac2.png' %}" alt="">
+    </div>
+    <div class="bac bac1">
+        <img src="{% static 'bac.png' %}" alt="">
+    </div>
+    <div class="context">
+        <div id="note1" class="note">
+            <font color="#777">在这里写入你的建议等</font>
+        </div>
+        <textarea class="areatext" style="border: none" onfocus="document.getElementById('note1').style.display='none'" onblur="if(value=='') document.getElementById('note1').style.display='block'"></textarea> 
+        
+        
+    </div>
+</div>
+<script>
+    $(function () {
+        function move() {
+            var click = 1;
+            $('.context').click(function () {
+                if(click%2==1) {
+                    $(this).css('bottom', 100 + 'px')
+                }else {
+                    $(this).css('bottom', 0)
+                }
+                click++;
+            })
+        }
+        move()
+    })
+</script>
+</body>
+</html>
