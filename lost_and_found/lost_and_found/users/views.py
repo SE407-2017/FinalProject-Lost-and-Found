@@ -40,13 +40,17 @@ def register(request):
     return render(request, 'users/register.html', context={'form': form, 'next': redirect_to})
 
 def index(request):
-    return render(request, 'index.html')
+    return render(request, 'new_index.html')
 def info(request):
 	return render(request, 'info.html')
 def home(request):
 	return render(request, 'home.html')
 def opinion(request):
     return render(request, 'envelope.html')
+def change_information(request):
+    return render(request, 'change.html')
+def about_us(request):
+    return render(request,'about_us.html')
 
 def uploadImg(request):
     if request.method == 'POST':

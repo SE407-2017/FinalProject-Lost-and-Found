@@ -1,12 +1,13 @@
+{% load static %}
 <!DOCTYPE html>
 <html lang="en">
 <head>
     <meta charset="UTF-8">
     <title>Invelope</title>
-    <script src="jquery-1.11.1.min.js"></script>
+    <script src="{% static 'js/jquery-1.11.1.min1.js' %}"></script>
     <style>
         body{
-            background-color: #e0e0e0;
+            background-color: #e9c9c9;
         }
         .whole{
             position: relative;
@@ -49,14 +50,14 @@
 <body>
 <div class="whole">
     <div class="bac bac2">
-        <img src="bac2.png" alt="">
+        <img src="{% static 'bac2.png' %}" alt="">
     </div>
     <div class="bac bac1">
-        <img src="bac.png" alt="">
+        <img src="{% static 'bac.png' %}" alt="">
     </div>
     <div class="context">
-        <p>I am a student coming from China.I am a student coming from China.I am a student coming from China.I am a student coming from China.I am a student coming from China.I am a student coming from China.
-        </p>
+        <textarea rows="100" cols="28" style="border: none"></textarea> 
+        
     </div>
 </div>
 <script>
