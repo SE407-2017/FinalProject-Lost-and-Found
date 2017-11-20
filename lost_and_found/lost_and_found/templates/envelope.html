@@ -5,7 +5,7 @@
     <meta charset="UTF-8">
     <title>Invelope</title>
     <script src="{% static 'js/jquery-1.11.1.min1.js' %}"></script>
-    <style>
+    <style type="text/css">
         body{
             background-color: #e9c9c9;
         }
@@ -45,6 +45,17 @@
             -webkit-transition: all 1s;	/* Safari 和 Chrome */
             -o-transition: all 1s;	/* Opera */
         }
+        .areatext{
+            width:217px;
+            max-width:250px;
+            height: 300px;
+            max-height: 350px;
+
+            ovreflow-y:auto;/*让滚动条自适应，保证兼容性*/
+        }
+        .note{
+            line-height:20px;padding:3px 5px;
+        }
     </style>
 </head>
 <body>
@@ -56,7 +67,11 @@
         <img src="{% static 'bac.png' %}" alt="">
     </div>
     <div class="context">
-        <textarea rows="100" cols="28" style="border: none"></textarea> 
+        <div id="note1" class="note">
+            <font color="#777">在这里写入你的建议等</font>
+        </div>
+        <textarea class="areatext" style="border: none" onfocus="document.getElementById('note1').style.display='none'" onblur="if(value=='') document.getElementById('note1').style.display='block'"></textarea> 
+        
         
     </div>
 </div>
