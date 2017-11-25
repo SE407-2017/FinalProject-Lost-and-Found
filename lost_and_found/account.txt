@@ -1,9 +1,0 @@
-superuser:Admin
-Password :admin123456
-User:	account	passowrd
-	User1	user123456
-	User2	user123456
-
-上传图片保存在media/upload
-/upload上传
-/show查看
