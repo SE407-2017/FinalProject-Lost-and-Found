@@ -40,8 +40,19 @@ def register(request):
     return render(request, 'users/register.html', context={'form': form, 'next': redirect_to})
 
 def index(request):
-    return render(request, 'new_index.html')
+    imgs = IMG.objects.all()
+    content={
+        'imgs':imgs
+    }
+    return render(request, 'new_index.html',content)
 def info(request):
+    if request.method == 'POST':
+        new_img = IMG(
+            img=request.FILES.get('img')
+        )
+        new_img.save()
+        return render(request, 'info.html')
+    else:
 	return render(request, 'info.html')
 def home(request):
 	return render(request, 'home.html')
@@ -51,6 +62,8 @@ def change_information(request):
     return render(request, 'change.html')
 def about_us(request):
     return render(request,'about_us.html')
+def detail(request):
+    return render(request, 'detail.html')
 
 def uploadImg(request):
     if request.method == 'POST':

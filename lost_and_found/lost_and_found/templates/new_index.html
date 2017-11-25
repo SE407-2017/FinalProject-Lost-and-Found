@@ -54,8 +54,12 @@
             </div>
         </div>
         <div class="right-body">
+                
             <div class="right-body-inner">
-                <div class="chart right-first">
+                    {% for i in imgs %}
+                    <a href="{% url 'users:detail' %}"><img src="{{ i.img_url|default_if_none:'#' }}" width=200px height=160px/></a>
+                    {% endfor %}
+                <!--<div class="chart right-first">
                     
                 </div>
                 <div class="chart right-second">
@@ -107,7 +111,7 @@
 
                 <div class="chart right-fifth">
                     
-                </div>
+                </div>-->
             </div>
         </div>
         <div class="footer"></div>

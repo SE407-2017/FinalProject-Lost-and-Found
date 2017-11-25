@@ -17,5 +17,11 @@ class User(AbstractUser):
 
 
 class IMG(models.Model):
-	img = models.ImageField(upload_to = 'upload')
+    img = models.ImageField(upload_to = 'upload')
+    @property
+    def img_url(self):
+        if self.img and hasattr(self.img, 'url'):
+            return self.img.url
+
+
 	

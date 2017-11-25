@@ -30,8 +30,15 @@
             <input id="2" style="border: none"><br><br><br>
             <p>物品细节:<br><br></p>
             <textarea rows=1000px cols=200px style="border:none;width:1000px;height:200px"></textarea><br><br><br>
-            <p><button class="btn btn-default"><a href="/upload">上传图片</a></button>
-            </p><br><br>
+            <form method="POST" enctype="multipart/form-data">
+                {% csrf_token %}
+                <input type="file" name="img">
+                <button type="submit">上传图片</button>
+            </form>
+
+            <!--<p><button class="btn btn-default"><a href="/upload">上传图片</a></button>-->
+            </p><br>
+            <p><a href="{% url 'index' %}">返回主页</a></p>
         </div>
     </div>
 
