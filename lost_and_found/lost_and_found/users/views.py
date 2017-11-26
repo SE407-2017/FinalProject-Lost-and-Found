@@ -44,7 +44,11 @@ def register(request):
     return render(request, 'users/register.html', context={'form': form, 'next': redirect_to})
 
 def index(request):
-    return render(request, 'new_index.html')
+    imgs = Upload1.objects.all()
+    content={
+        'imgs':imgs,
+    }
+    return render(request, 'new_index.html',content)
 def info(request):
     if request.method == 'POST':
         my_form = forms.Form(request.POST, request.FILES)
