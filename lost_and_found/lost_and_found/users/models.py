@@ -23,4 +23,8 @@ class Upload1(models.Model):
         phoneNumber = models.CharField(max_length=10)
         details = models.TextField(max_length=200)
         user = models.ForeignKey(User, on_delete=models.CASCADE)
+        @property
+        def img_url(self):
+            if self.img and hasattr(self.img, 'url'):
+                return self.img.url
  
