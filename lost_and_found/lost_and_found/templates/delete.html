@@ -1,0 +1,14 @@
+<h1>hello,{{ user.username }}</h1>
+<form method="POST" id="delete">
+{% for i in Uploadlist %}
+<p>用户：{{i.user.username}}</p>
+<img src="{{i.img.url}}" width="100px" height="80px" />
+<p>详情：{{i.details}}</p>
+<br/><input type="checkbox" name="delete" value={{index}}>选中<br/>
+<script type="text/javascript">
+index+=1
+</script>
+{% endfor %}
+{% csrf_token %}
+<br/><input type="submit" value="撤回" onclick="winclose()"/><br/>
+</form>

@@ -29,4 +29,5 @@ urlpatterns = [
     url(r'^$', views.index, name='index'),
 	url(r'^users/home/',views.home),
     url(r'^show', views.showImg,name='show'),
+    url(r'^delete', views.delete,name='delete'),
 ]+ static(settings.MEDIA_URL, document_root=settings.MEDIA_ROOT)

@@ -7,7 +7,8 @@ from .models import *
 # Create your views here.
 from django.shortcuts import render, redirect
 from .forms import *
-
+from django.db import models
+from django.db.models.signals import post_delete
 
 
 def register(request):
@@ -43,11 +44,7 @@ def register(request):
     return render(request, 'users/register.html', context={'form': form, 'next': redirect_to})
 
 def index(request):
-    imgs = Upload1.objects.all()
-    content={
-        'imgs':imgs
-    }
-    return render(request, 'new_index.html',content)
+    return render(request, 'new_index.html')
 def info(request):
     if request.method == 'POST':
         my_form = forms.Form(request.POST, request.FILES)
@@ -60,7 +57,6 @@ def info(request):
                 user = request.user
             )
             new_img.save()
-            request.user.Uploadlist.append(new_img)
     return render(request, 'info.html')
 def home(request):
 	return render(request, 'home.html')
@@ -73,6 +69,26 @@ def about_us(request):
 def showImg(request):
     imgs = Upload1.objects.all()
     content={
-        'imgs':imgs
+        'imgs':imgs,
     }
     return render(request,'users/showimg.html',content)
+def delete(request):
+    imgs = Upload1.objects.all()
+    name=request.user.username
+    Uploadlist = []
+    for i in imgs:
+        if i.user.username==name:
+            Uploadlist.append(i)
+    if request.method == 'POST':
+        deletelist = request.POST.getlist('delete')
+        if deletelist:
+            start = 0
+            for i in deletelist:
+                i=int(i)
+                q = Uploadlist[i]
+                q.img.delete(save=False)
+                q.delete()
+                del Uploadlist[i]
+    index=0
+    content = {'Uploadlist':Uploadlist, 'index':index}
+    return render(request, 'delete.html', content)
