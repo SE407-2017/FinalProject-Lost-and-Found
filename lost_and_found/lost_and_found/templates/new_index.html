@@ -55,9 +55,18 @@
         </div>
         <div class="right-body">
             <div class="right-body-inner">
+                
                     {% for i in imgs %}
+                    <div class="chart-bar">
                     <img src="{{ i.img_url|default_if_none:'#' }}" width=200px height=160px/>
+                    <div class="inner-chart">
+                    <div class="button"><p>姓名：{{i.finder}}</p></div>
+                    <div class="button"><p>电话号码：{{i.phoneNumber}}</p></div>
+                    <div class="button1"><p>物品细节：{{i.details}}</p></div>
+                    </div>
+                    </div>
                     {% endfor %}
+                
                 <!--<div class="chart right-first">
                     
                 </div>

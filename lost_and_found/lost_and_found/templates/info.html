@@ -30,7 +30,8 @@
             <input id="2" style="border: none" type="text" name="phoneNumber" required><br><br><br>
             <p>物品细节:<br><br></p>
             <textarea name="details" form="upload" rows=1000px cols=200px style="border:none;width:1000px;height:200px"></textarea><br><br><br>
-            </p><br><br>
+            </p><br>
+            <a href="{% url 'index' %}"><p>点击返回主页</p></a>
 			{% csrf_token %}
 			<input type="file" name="img" required>
 			<button type="submit">上传</button>
