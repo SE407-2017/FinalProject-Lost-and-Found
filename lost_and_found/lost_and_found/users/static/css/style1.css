@@ -52,7 +52,7 @@ body{height: 100%;overflow: hidden;background-color: #F0F0F0;overflow: auto}
 .button{width: 296px;height: 30px;float: right;border-radius: 5px;background-color: white;border: 1px solid #e0e0e0}
 .button1{width: 296px;height: 90px;float: right;border-radius: 5px;background-color: white;overflow-y: scroll;border: 1px solid #e0e0e0;word-break: break-all}
 .button p{line-height: 40px;margin-left: 40px;font-size: 18px;text-align: center}
-.button1 p{line-height: 40px;margin-left: 40px;font-size: 18px}
+.button1 p{line-height: 40px;margin-left: 20px;font-size: 18px;line-height: 20pt}
 td{border: 1px solid #e6e6e6}
 .footer{position: absolute;left: 0;right: 0;bottom: 0}
 
