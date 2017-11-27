@@ -1,3 +1,4 @@
+
 @charset "utf-8";
 /**  全局样式  **/
 html, body, div, p, ul, li, dl, dt, dd, h1, h2, h3, h4, h5, h6, form,p,input, select, button, textarea, iframe, table, th, td { margin: 0; padding: 0; }
@@ -9,7 +10,7 @@ ul, li { list-style-type: none; }
 h1, h2, h3, h4, h5, h6 { font-size: 14px; }
 body, input, select, button, textarea { font-size: 14px; font-family:"微软雅黑","microsoft yahei",Arial,Helvetica,sans-serif;outline:0;}
 i, em, cite { font-style: normal; }
-body {background:#fff; color: #666; line-height: 1.2; }
+
 a, a:link {color:#666;text-decoration: none; }
 a:visited {}
 a:active, a:hover {text-decoration: none;}
@@ -24,8 +25,10 @@ a:focus { outline: none; }
 .clear{clear:both;}
 
 /*样式正式开始*/
-body{height: 100%;overflow: hidden;background-color: #F0F0F0;overflow: auto}
 
+body{background-image: url(images/beijing.jpg);background-size: cover;
+
+}
 .left-inner-active{display: block}
 
 
@@ -37,7 +40,7 @@ body{height: 100%;overflow: hidden;background-color: #F0F0F0;overflow: auto}
 .nav ul h1{float:right;text-align:right;}
 
 .left-bar{width: 200px;position: absolute;left: 0;top:100px;margin-top: 20px}
-.left-inner{width:200px;border-top: 20px solid #F0F0F0;}
+.left-inner{width:200px;border-top: 20px }
 .left-inner-bar{display: none}
 .left-inner-bar ul li{;height:24px;line-height: 24px;font-size: 16px;text-align: center;border-bottom: 1px solid #e6e6e6;cursor: pointer;background-color: white;color: grey}
 .b-choose{min-height: 40px;border: 1px solid #e0e0e0;cursor: pointer;border-radius: 5px;background-color: white}
