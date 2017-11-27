@@ -45,13 +45,14 @@
                                 <li class="fourth-twelfth">图十二</li>
                             </ul>
                         </div>-->
-                    </div>
+                    
                     <a href="{% url 'logout' %}?next={{ request.path }}"><div class="b-choose choose-fifth" style="color:crimson"><span>退出登录</span></div></a>
                 {% else %}
                     <a href="{% url 'login' %}?next={{ request.path }}"><div class="b-choose choose-second"><span>登陆</span></div></a>
                     <a href="{% url 'users:register' %}"><div class="b-choose choose-third"><span>注册</span></div></a>
                     <a href="{% url 'users:about' %}"><div class="b-choose choose-fourth"><span>关于我们</span></div></a>
                 {% endif %}
+                </div>
             </div>
         </div>
         <div class="right-body">
