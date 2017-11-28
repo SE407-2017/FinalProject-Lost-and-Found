@@ -1,12 +1,24 @@
-<h1>hello,{{ user.username }}</h1>
-<a href="{% url 'index' %}"><p>返回主页</p></a>
+{% load static %}
+<body>
+<link rel="stylesheet" href="{% static 'css/delete.css' %}">
+<h1 class="title" >Hello,{{ user.username }}</h1>
+<a href="{% url 'index' %}"><p class="word">返回主页</p></a>
+<div class="box">
+    <div class="inner_box">
 <form method="POST" id="delete">
-{% for i in Uploadlist %}
-<p>物品名称：{{i.finder}}</p>
-<img src="{{i.img.url}}" width="100px" height="80px" />
-<p>详情：{{i.details}}</p>
-<br/><input type="checkbox" name="delete" value="{{i.index}}">选中<br/>
-{% endfor %}
-{% csrf_token %}
-<br/><input type="submit" value="撤回" onclick="winclose()"/><br/>
+    {% for i in Uploadlist %}
+        <div class="ininner_box">
+            <img src="{{i.img.url}}" width="250px" height="180px" />
+            <div class="word_box">
+            <div class="button"><p>物品名称：{{i.finder}}</p></div>
+            <div class="button1"><p>详情：{{i.details}}</p></div>
+            </div>
+            <br/><input type="checkbox" name="delete" value="{{i.index}}" >选中<br/>
+        </div>
+    {% endfor %}
+    {% csrf_token %}
+        <br/><input type="submit" value="撤回" onclick="winclose()"/ style="position:absolute;bottom:-30px;left:500px"><br/>
 </form>
+    </div>
+</div>
+</body>

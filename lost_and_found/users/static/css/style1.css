@@ -46,16 +46,16 @@ body{background-image: url(images/beijing.jpg);background-size: cover;
 .b-choose{min-height: 40px;border: 1px solid #e0e0e0;cursor: pointer;border-radius: 5px;background-color: white}
 .b-choose span{line-height: 40px;margin-left: 40px;font-size: 18px;text-align: center}
 
-.right-body{position: absolute;left: 200px;right: 0;top: 100px;bottom: 50px;overflow:auto;padding:0 20px;}
-.right-body-inner{min-height: 600px;border-radius: 8px; padding: 10px;background-color: white;overflow: auto;position: relative}
+.right-body{position: absolute;left: 200px;right: 0;top: 100px;bottom: 50px;padding:0 20px;}
+.right-body-inner{height: 460px;border-radius: 8px; padding: 10px;background-color: rgb(255, 255, 255);overflow: auto;position: relative}
 .chart{width: 600px;height: 300px;position: absolute;left: 50%;margin-left: -500px;margin-top: 100px;display: none}
-.chart-bar{width: 500px;height:160px;float: left;border-radius: 8px;background-color: rgb(132, 229, 235)}
-.inner-chart{width: 300px;height:160px;float: right;border-radius: 5px;background-color: white}
+.chart-bar{width: 480px;height:180px;float: left;border-radius: 8px;background-color: rgb(132, 229, 235);padding:10px}
+.inner-chart{width: 240px;height:180px;float: right;border-radius: 5px;background-color: white}
 .chart-legend{width: 100px;height: 100px;float: left;background-color: green}
-.button{width: 296px;height: 30px;float: right;border-radius: 5px;background-color: white;border: 1px solid #e0e0e0}
-.button1{width: 296px;height: 90px;float: right;border-radius: 5px;background-color: white;overflow-y: scroll;border: 1px solid #e0e0e0;word-break: break-all}
+.button{width: 240px;height: 30px;float: right;border-radius: 5px;background-color: white;border: 1px solid #e0e0e0}
+.button1{width: 240px;height: 90px;float: right;border-radius: 5px;background-color: white;overflow-y: scroll;border: 1px solid #e0e0e0;word-break: break-all}
 .button p{line-height: 40px;margin-left: 40px;font-size: 18px;text-align: center}
-.button1 p{line-height: 40px;margin-left: 20px;font-size: 18px;line-height: 20pt}
+.button1 p{line-height: 40px;margin-left: 5px;font-size: 18px;line-height: 20pt}
 td{border: 1px solid #e6e6e6}
 .footer{position: absolute;left: 0;right: 0;bottom: 0}
 
