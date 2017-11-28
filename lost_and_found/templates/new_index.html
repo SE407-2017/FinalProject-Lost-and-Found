@@ -22,7 +22,7 @@
 
         <div class="left-bar">
             <div class="left-inner">
-                <div class="b-choose choose-first"><a href="{% url 'show' %}"><span>显示失物图片</span></a></div>
+                
                 {% if user.is_authenticated %}
                     <a href="{% url 'users:change_information' %}"><div class="b-choose choose-second"><span>修改个人信息</span></div></a>
                     <a href="{% url 'users:info' %}"><div class="b-choose choose-third"><span>张贴失物信息</span></div></a>
