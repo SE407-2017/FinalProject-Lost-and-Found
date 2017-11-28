@@ -1,9 +1,38 @@
 {% load static %}
-<html>
+<!DOCTYPE html>
+<html lang="en">
 <head>
-	<link rel="stylesheet" href="{% static 'css/style1.css' %}">
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1,maximum-scale=1.0,user-scalable=no" >
+    <script src="{% static 'js/jquery-1.11.1.min1.js' %}"></script>
+    <script src="{% static 'js/index1.js' %}" ></script>
+    <link rel="stylesheet" href="{% static 'css/style1.css' %}">
+    <title>失物招领管理</title>
 </head>
 <body>
-	<h1>sjdksjkds</h1>
+    <div class="bg-contain">
+        <div class="nav">
+            <ul>
+            	<img src="{% static 'timg.jpg' %}">
+                <li>失物招领管理系统</li>
+                <h1>hello,{{ user.username }}</h1>
+            </ul>
+        
+			<h1> 
+				关于我们
+			</h1>
+			<hr />
+			<p>
+				失物招领管理系统的创立旨在服务交大校园内生活的广大教师同学及工<br>作人员，其创建在于方便大家及时取得失物信息，进而找回丢失的物品
+			</p>
+			<hr />
+			<p> 项目人员：肖宇洋  刘子洋  陈胤儒  李开涞  熊俊  裘炜程  周恒成</p>
+	    </div>
+	</div>
+
+
+    
+
+  
 </body>
 </html>
