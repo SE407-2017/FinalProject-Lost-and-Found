@@ -1,0 +1,53 @@
+{% load static %}
+<!DOCTYPE HTML>
+<html>
+	<head>
+		<title>Lost_and_found</title>
+		<meta charset="utf-8" />
+		<link rel="stylesheet" href="{% static 'css/main.css' %}">
+	</head>
+	<body>
+
+			<div id="page-wrapper">
+				<!-- Footer -->
+					<section id="footer">
+						<div class="inner">
+							<h2 class="major">点击<a href="{% url 'index' %}">Lost and Found</a>返回主页</h2>
+							<p>在这里你能够更改一些个人信息包括姓名，email，个人简介等，同时右边有我们的联系方式，
+								你可以通过此来联系我们。</p>
+							<form method="post" action="#">
+								<div class="field">
+									<label for="name">Name</label>
+									<input type="text" name="name" id="name" />
+								</div>
+								<div class="field">
+									<label for="email">Email</label>
+									<input type="email" name="email" id="email" />
+								</div>
+								<div class="field">
+									<label for="message">Personal profile</label>
+									<textarea name="message" id="message" rows="4"></textarea>
+								</div>
+								<div>
+									<input type="submit" value="Send Message" />
+								</div>
+							</form>
+							<ul class="contact">
+								<li class="fa-home">
+									Lost_and_found<br />
+									东川路800号<br />
+									中国上海市
+								</li>
+								<li class="fa-phone">54749110</li>
+								<li class="fa-envelope">lost_and_found@sjtu.edu.cn</li>
+	
+							</ul>
+						</div>
+					</section>
+
+			</div>
+
+		
+         
+	</body>
+</html>
