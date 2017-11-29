@@ -30,10 +30,10 @@
             <p>补充说明:<br><br></p>
             <textarea name="details" form="upload" rows=1000px cols=200px style="border:none;width:1000px;height:200px"></textarea><br><br>
             </p><br>
-            <a href="{% url 'index' %}"><p>返回主页</p></a>
 			{% csrf_token %}
 			<input type="file" name="img" required>
 			<button type="submit">上传</button>
+			<a href="{% url 'index' %}"><p class="word">返回主页</p></a>
 			</form>
         </div>
     </div>

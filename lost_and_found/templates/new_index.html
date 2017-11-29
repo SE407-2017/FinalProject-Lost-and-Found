@@ -24,7 +24,6 @@
             <div class="left-inner">
                 
                 {% if user.is_authenticated %}
-                    <a href="{% url 'users:change_information' %}"><div class="b-choose choose-second"><span>修改个人信息</span></div></a>
                     <a href="{% url 'users:info' %}"><div class="b-choose choose-third"><span>张贴失物信息</span></div></a>
                     <a href="{% url 'users:opinion' %}"><div class="b-choose choose-fourth"><span>意见箱</span></div></a>
                     <a href="{% url 'users:about' %}"><div class="b-choose choose-fifth"><span>关于我们</span></div></a>
@@ -61,6 +60,7 @@
                     <div class="chart-bar">
                     <img src="{{ i.img.url}}" width=235px height=185px/>
                     <div class="inner-chart">
+					<p>发布时间：{{i.pub_date}}</p>
 					<div class="button"><p>用户：{{i.user.username}}</p></div>
                     <div class="button"><p>物品名称：{{i.finder}}</p></div>
                     <div class="button"><p>联系方式：{{i.phoneNumber}}</p></div>

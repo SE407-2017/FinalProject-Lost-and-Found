@@ -44,7 +44,10 @@ def register(request):
     return render(request, 'users/register.html', context={'form': form, 'next': redirect_to})
 
 def index(request):
-    imgs = Upload1.objects.all()
+    imgs0 = Upload1.objects.all()
+    imgs = []
+    for i in imgs0:
+        imgs.insert(0,i)
     content={
         'imgs':imgs,
     }
@@ -77,8 +80,12 @@ def showImg(request):
     }
     return render(request,'users/showimg.html',content)
 def delete(request):
+    imgs0 = Upload1.objects.all()
+    imgs0 = Upload1.objects.all()
+    imgs = []
+    for i in imgs0:
+        imgs.insert(0,i)
     name=request.user.username
-    imgs = Upload1.objects.all()
     Uploadlist = []
     index = 0
     for i in imgs:

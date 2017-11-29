@@ -22,4 +22,5 @@ class Upload1(models.Model):
         phoneNumber = models.CharField(max_length=10)
         details = models.TextField(max_length=200)
         user = models.ForeignKey(User, on_delete=models.CASCADE)
+        pub_date = models.DateTimeField('date published',auto_now_add=True)
         index = -1
