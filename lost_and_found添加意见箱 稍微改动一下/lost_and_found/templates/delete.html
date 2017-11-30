@@ -1,0 +1,29 @@
+{% load static %}
+<body>
+<h2 class = "title">hello&nbsp&nbsp{{ user.username }}&nbsp&nbsp</h2>
+<a href="{% url 'index' %}"><p class="word">返回主页</p></a>
+<link rel="stylesheet" href="{% static 'css/delete.css' %}">
+<div class="box">
+    <div class="inner_box">
+	<h4>选中撤回的失物信息后请点击页面底部的“撤回”按钮</h4>
+<form method="POST" id="delete">
+    {% for i in Uploadlist %}
+        <div class="ininner_box">
+            <img src="{{i.img.url}}" width="250px" height="130px" />
+            <div class="word_box">
+			{% if user.is_superuser %}
+			<div class="button"><p>用户：{{i.user.username}}</p></div>
+			{% endif %}
+            <div class="button"><p>物品名称：{{i.finder}}</p></div>
+            <div class="button1"><p>详情：{{i.details}}</p></div>
+            </div>
+			<p>发布时间：{{i.pub_date}}</p>
+            <br/><input type="checkbox" name="delete" value="{{i.index}}" >选中<br/>
+        </div>
+    {% endfor %}
+    {% csrf_token %}
+        <br/><input type="submit" value="撤回" onclick="winclose()"/ style="position:absolute;bottom:-30px;left:500px"><br/>
+</form>
+    </div>
+</div>
+</body>
