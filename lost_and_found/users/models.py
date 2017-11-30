@@ -17,7 +17,7 @@ class User(AbstractUser):
 
 
 class Upload1(models.Model):
-	img = models.ImageField(upload_to = 'upload')
+        img = models.ImageField(upload_to = 'upload')
         finder = models.CharField(max_length=10)
         phoneNumber = models.CharField(max_length=10)
         details = models.TextField(max_length=200)

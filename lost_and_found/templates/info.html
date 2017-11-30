@@ -24,17 +24,17 @@
         <div style="position: absolute;top:150px;margin-left:20px">
 			<form method="POST" enctype="multipart/form-data" id="upload">
             <p>物品名称：<br><br></p>
-            <input id="1" style="border: none" type="text" name="finder" required><br><br>
+            <input id="1" style="border: none ;background-color:rgba(255,255,255,0.2)" type="text" name="finder" required><br><br>
             <p>联系方式：<br><br></p>
-            <input id="2" style="border: none" type="text" name="phoneNumber" required><br><br>
+            <input id="2" style="border: none;background-color:rgba(255,255,255,0.2)" type="text" name="phoneNumber" required><br><br>
             <p>补充说明:<br><br></p>
-            <textarea name="details" form="upload" rows=1000px cols=200px style="border:none;width:1000px;height:200px"></textarea><br><br>
+            <textarea name="details" form="upload" rows=1000px cols=200px style="border:none;width:1000px;height:200px;background-color:rgba(255,255,255,0.2)"></textarea><br><br>
             </p><br>
 			{% csrf_token %}
-			<input type="file" name="img" required>
-			<button type="submit">上传</button>
-			<a href="{% url 'index' %}"><p class="word">返回主页</p></a>
-			</form>
+			<input type="file" name="img" style="height: 24px; width:200px" required>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+			<button type="submit" style="background-color:rgba(255,255,255,0.2)">上传</button>
+            <div style="height: 24px;width:64px"><a href="{% url 'index' %}"><input type="button" value="返回主页"style="background-color:rgba(255,255,255,0.2)" /></a></div>
+            </form>
         </div>
     </div>
 

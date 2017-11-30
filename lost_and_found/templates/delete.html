@@ -1,14 +1,17 @@
 {% load static %}
+<style>
+#divcss5{margin:0 auto;border: none;width:64px;height:32px}
+</style>
 <body>
 <h2 class = "title">hello&nbsp&nbsp{{ user.username }}&nbsp&nbsp</h2>
-<a href="{% url 'index' %}"><p class="word">返回主页</p></a>
+<div id="divcss5" ><a href="{% url 'index' %}"><input type="button" value="返回主页"style="background-color:rgba(255,255,255,0.2)" /></a></div>
 <link rel="stylesheet" href="{% static 'css/delete.css' %}">
-<div class="box">
+<div class="box" style="border: none;background-color:rgba(255,255,255,0.2)">
     <div class="inner_box">
 	<h4>选中撤回的失物信息后请点击页面底部的“撤回”按钮</h4>
 <form method="POST" id="delete">
     {% for i in Uploadlist %}
-        <div class="ininner_box">
+        <div class="ininner_box" style="background-color:rgba(255,255,255,0.2)">
             <img src="{{i.img.url}}" width="250px" height="180px" />
             <div class="word_box">
             <div class="button"><p>物品名称：{{i.finder}}</p></div>
@@ -19,7 +22,8 @@
         </div>
     {% endfor %}
     {% csrf_token %}
-        <br/><input type="submit" value="撤回" onclick="winclose()"/ style="position:absolute;bottom:-30px;left:500px"><br/>
+        <br/>
+    <input type="submit" value="撤回" onclick="winclose()" style="position:absolute;bottom:-30px;left:500px ;width:64px;height: 25px;background-color:rgba(255,255,255,0.2)"><br/>
 </form>
     </div>
 </div>
